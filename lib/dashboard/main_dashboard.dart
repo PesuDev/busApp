@@ -17,6 +17,7 @@ class DashBoard extends StatefulWidget {
 
 class _DashBoardState extends State<DashBoard> {
   TextEditingController startControleer = TextEditingController();
+  TextEditingController endControleer = TextEditingController();
   String? search = "";
 
   @override
@@ -95,6 +96,7 @@ class _DashBoardState extends State<DashBoard> {
                             Container(
                               margin: EdgeInsets.only(left: 25),
                               child: TextField(
+                                controller: endControleer,
                                 decoration: InputDecoration(
                                     border: InputBorder.none,
                                     hintText: 'Enter Destination'),
@@ -181,7 +183,7 @@ class _DashBoardState extends State<DashBoard> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    busScreen(startControleer.text)));
+                                    busScreen(startControleer.text,search,endControleer.text)));
                       }
                     },
                     child: Container(

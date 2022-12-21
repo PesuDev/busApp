@@ -1,5 +1,6 @@
 import 'package:bus/dashboard/booking_Seating.dart';
 import 'package:bus/dashboard/passenger_detail_screen.dart';
+import 'package:bus/utils/services/constants.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dash/flutter_dash.dart';
@@ -8,7 +9,9 @@ import '../model/bus_model.dart';
 
 class busScreen extends StatefulWidget {
 String? search;
-busScreen(this.search);
+String? startControleer;
+String? endControleer;
+busScreen(this.search,this.startControleer,this.endControleer);
   @override
   State<busScreen> createState() => _busScreenState();
 }
@@ -20,9 +23,10 @@ class _busScreenState extends State<busScreen> {
       appBar: AppBar(
         title: Row(
           children: [
-            Text("Pollachi"),
+            Text(widget.startControleer.toString()),
             Icon(Icons.arrow_forward),
-            Text("Chennai"),
+            Text(widget.endControleer.toString()),
+
           ],
         ),
         actions: <Widget>[
